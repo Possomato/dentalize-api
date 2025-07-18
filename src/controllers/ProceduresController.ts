@@ -35,7 +35,6 @@ export class ProceduresController {
     const {id} = req.params
 
     await knex('procedures').delete().where({id})
-    const procedures = await knex('procedures').select()
-    res.send(procedures)
+    res.send({ message: 'Deleted' })
   }
 }
